@@ -3,7 +3,6 @@
 <main class="container p-4">
   <div class="row">
     <div class="col-md-4">
-      <!-- MESSAGES -->
 
       <?php if (isset($_SESSION['message'])) { ?>
       <div class="alert alert-<?= $_SESSION['message_type']?> alert-dismissible fade show" role="alert">
@@ -14,31 +13,28 @@
       </div>
       <?php session_unset(); } ?>
 
-      <!-- ADD TASK FORM -->
+      <!-- AÑADIR PRODUCTO -->
       <div class="card card-body">
         <form action="save.php" method="POST">
           <div class="form-group">
-            <input type="text" name="Nombredeproducto" class="form-control" placeholder="Nombre de producto" autofocus>
+            <input type="text" name="Nombredeproducto" class="form-control" placeholder="Nombre de producto" autofocus required>
           </div>
           <div class="form-group">
-            <input type="text" name="Referencia" class="form-control" placeholder="Referencia" autofocus>
+            <input type="text" name="Referencia" class="form-control" placeholder="Referencia" autofocus  required>
           </div>
           <div class="form-group">
-            <input type="text" name="Precio" class="form-control" placeholder="Precio" autofocus>
+            <input type="text" name="Precio" class="form-control" placeholder="Precio" autofocus min="1" pattern="^[0-9]+" required>
           </div>
           <div class="form-group">
-            <input type="text" name="Peso" class="form-control" placeholder="Peso" autofocus>
+            <input type="text" name="Peso" class="form-control" placeholder="Peso" autofocus min="1" pattern="^[0-9]+" required>
           </div>
           <div class="form-group">
-            <input type="text" name="Categoria" class="form-control" placeholder="Categoria" autofocus>
+            <input type="text" name="Categoria" class="form-control" placeholder="Categoria" autofocus required>
           </div>
           <div class="form-group">
-            <input type="text" name="Stock" class="form-control" placeholder="Stock" autofocus>
+            <input type="text" name="Stock" class="form-control" placeholder="Stock" autofocus min="1" pattern="^[0-9]+" required>
           </div>
-          <div class="form-group">
-            <input type="date" name="Fechadeultimaventa" class="form-control" placeholder="Fecha de ultima venta" autofocus>
-          </div>
-          <input type="submit" name="saveproduct" class="btn btn-success btn-block" value="Save Product">
+          <input type="submit" name="saveproduct" class="btn btn-success btn-block" value="Save Product" required>
         </form>
       </div>
     </div>
@@ -83,6 +79,9 @@
                 <!-- <i class="far fa-trash-alt"></i> -->
                 Borrar
               </a>
+              <br>
+              
+              </br>
               <a href="sale.php?ID=<?php echo $row['ID']?>" class="btn btn-secondary" >
                 <!-- <i class="fas fa-marker"></i> -->
                 Vender

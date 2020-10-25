@@ -13,14 +13,15 @@ if  (isset($_GET['ID'])) {
     if( $row['Stock'] > 0){
     $Nombredeproducto = $row['Nombredeproducto'];
     $Referencia = $row['Referencia'];
-    $Precio = $row['Referencia'];
+    $Precio = $row['Precio'];
     $Peso = $row['Peso'];
     $Categoria = $row['Categoria'];
     $Stock = $row['Stock'] - 1;//Se le resta uno al stock
     $Fechadecreacion = $row['Fechadecreacion'];
-    $Fechadeultimaventa = $row['Fechadeultimaventa'];
-//Para crear el query
-
+    $Fechadeultimaventa = date("Y-m-d H:i:s");
+    //Se toma la fecha instantánea 
+    //Para crear el query
+    echo $Fechadeultimaventa;
       $query = "UPDATE producto 
       set Nombredeproducto = '$Nombredeproducto', 
       Referencia = '$Referencia' ,

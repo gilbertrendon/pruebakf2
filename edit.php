@@ -10,15 +10,15 @@ if  (isset($_GET['ID'])) {
   $result = mysqli_query($conn, $query);
   if (mysqli_num_rows($result) == 1) {
     $row = mysqli_fetch_array($result);
+
     $Nombredeproducto = $row['Nombredeproducto'];
     $Referencia = $row['Referencia'];
-    $Precio = $row['Referencia'];
+    $Precio = $row['Precio'];
     $Peso = $row['Peso'];
     $Categoria = $row['Categoria'];
     $Stock = $row['Stock'];
     $Fechadecreacion = $row['Fechadecreacion'];//Se genera solo en BD
     $Fechadeultimaventa = $row['Fechadeultimaventa'];
-
   }
 }
 
@@ -27,13 +27,16 @@ if (isset($_POST['update'])) {
   $id = $_GET['ID'];
   $Nombredeproducto = $_POST['Nombredeproducto'];
   $Referencia = $_POST['Referencia'];
-  $Precio = $_POST['Referencia'];
+  $Precio = $_POST['Precio'];
   $Peso = $_POST['Peso'];
   $Categoria = $_POST['Categoria'];
   $Stock = $_POST['Stock'];
   //$Fechadecreacion = $_POST['Fechadecreacion'];//Se genera solo en BD
-  $Fechadeultimaventa = $_POST['Fechadeultimaventa'];
-
+  //$Fechadeultimaventa = $_POST['Fechadeultimaventa'];
+ echo $Precio;
+ if($Precio == NULL){
+   $Precio = 1000;
+ }
   $query = "UPDATE producto 
   set Nombredeproducto = '$Nombredeproducto', 
   Referencia = '$Referencia' ,
@@ -60,32 +63,27 @@ if (isset($_POST['update'])) {
       <form action="edit.php?ID=<?php echo $_GET['ID']; ?>" method="POST">
         <div class="form-group">
           <input name="Nombredeproducto" type="text" class="form-control" value="<?php 
-          echo $Nombredeproducto; ?>" placeholder="Actualizar nombre de producto">
+          echo $Nombredeproducto; ?>" placeholder="Actualizar nombre de producto" required>
         </div>
         <div class="form-group">
           <input name="Referencia" type="text" class="form-control" value="<?php 
-          echo $Referencia; ?>" placeholder="Actualizar Referencia">
+          echo $Referencia; ?>" placeholder="Actualizar Referencia" required>
         </div>
         <div class="form-group">
           <input name="Precio	" type="text" class="form-control" value="<?php 
-          echo $Precio; ?>" placeholder="Actualizar Precio	">
+          echo $Precio; ?>" placeholder="Actualizar Precio" required>
         </div>
         <div class="form-group">
           <input name="Peso" type="text" class="form-control" value="<?php 
-          echo $Peso; ?>" placeholder="Actualizar Peso">
+          echo $Peso; ?>" placeholder="Actualizar Peso" min="1" pattern="^[0-9]+" required>
         </div>
         <div class="form-group">
           <input name="Categoria" type="text" class="form-control" value="<?php 
-          echo $Categoria; ?>" placeholder="Actualizar Categoria">
+          echo $Categoria; ?>" placeholder="Actualizar Categoria" required>
         </div>
         <div class="form-group">
           <input name="Stock" type="text" class="form-control" value="<?php 
-          echo $Stock; ?>" placeholder="Actualizar Stock">
-        </div>
-        <div class="form-group">
-            <input type="date" name="Fechadeultimaventa" class="form-control" 
-            value="<?php echo $Fechadeultimaventa; ?>" 
-            placeholder="Fecha de ultima venta" autofocus>
+          echo $Stock; ?>" placeholder="Actualizar Stock" min="1" pattern="^[0-9]+" required>
         </div>
 
         <button class="btn-success" name="update">
