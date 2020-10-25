@@ -83,6 +83,10 @@
                 <!-- <i class="far fa-trash-alt"></i> -->
                 Borrar
               </a>
+              <a href="sale.php?ID=<?php echo $row['ID']?>" class="btn btn-secondary" >
+                <!-- <i class="fas fa-marker"></i> -->
+                Vender
+              </a>
             </td>
           </tr>
           <?php } ?>
