@@ -30,7 +30,7 @@
             <input type="text" name="Categoria" class="form-control" placeholder="Fecha nacimiento" autofocus required>
           </div>
        
-          <input type="submit" name="saveproduct" class="btn btn-success btn-block" value="Save Product" required>
+          <input type="submit" name="saveproduct" class="btn btn-success btn-block" value="Save person" required>
         </form>
       </div>
     </div>
@@ -39,9 +39,9 @@
         <thead>
           <tr>
             <th>Nombre </th>
-            <th>Referencia</th>
+            <th>Fecha</th>
             <th>Sexo </th>
-            <th>Fecha </th>
+            <th>Id </th>
           </tr>
         </thead>
         <tbody>
@@ -54,8 +54,8 @@
           <tr>
             <td><?php echo $row['Nombredeproducto']; ?></td>
             <td><?php echo $row['Categoria']; ?></td>
-            <td><?php echo $row['Stock']; ?></td>
-            <td><?php echo $row['Fechadeultimaventa']; ?></td>
+            <td><?php echo $row['Referencia']; ?></td>
+            <td><?php echo $row['Precio']; ?></td>
             <td>
               <a href="edit.php?ID=<?php echo $row['ID']?>" class="btn btn-secondary" >
                 <!-- <i class="fas fa-marker"></i> -->
@@ -71,10 +71,10 @@
               <br>
               
               </br>
-              <a href="sale.php?ID=<?php echo $row['ID']?>" class="btn btn-secondary" >
+              <!-- <a href="sale.php?ID=<?php echo $row['ID']?>" class="btn btn-secondary" > -->
                 <!-- <i class="fas fa-marker"></i> -->
-                Vender
-              </a>
+                <!-- Vender
+              </a> -->
             </td>
           </tr>
           <?php } ?>

@@ -7,9 +7,11 @@ if (isset($_POST['saveproduct'])) {
   $Nombredeproducto = $_POST['Nombredeproducto'];
   $Referencia = $_POST['Referencia'];
   $Precio = $_POST['Precio'];
-  $Peso = $_POST['Peso'];
+  $Peso = 1;//por defecto ya que no sera usado
+  //$Peso = $_POST['Peso'];
   $Categoria = $_POST['Categoria'];
-  $Stock = $_POST['Stock'];
+  $Stock = 1;
+  //$Stock = $_POST['Stock'];
   //$Fechadecreacion = $_POST['Fechadecreacion'];//Se genera solo en BD
   //$Fechadeultimaventa = $_POST['Fechadeultimaventa'];
 

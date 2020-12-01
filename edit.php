@@ -74,18 +74,18 @@ if (isset($_POST['update'])) {
             <input name="Precio" type="text" class="form-control" value="<?php 
             echo $Precio; ?>" placeholder="Actualizar Precio" required>
         </div>
-        <div class="form-group">
+        <!-- <div class="form-group">
           <input name="Peso" type="text" class="form-control" value="<?php 
           echo $Peso; ?>" placeholder="Actualizar Peso" min="1" pattern="^[0-9]+" required>
-        </div>
+        </div> -->
         <div class="form-group">
           <input name="Categoria" type="text" class="form-control" value="<?php 
           echo $Categoria; ?>" placeholder="Actualizar Categoria" required>
         </div>
-        <div class="form-group">
+        <!-- <div class="form-group">
           <input name="Stock" type="text" class="form-control" value="<?php 
           echo $Stock; ?>" placeholder="Actualizar Stock" min="1" pattern="^[0-9]+" required>
-        </div>
+        </div> -->
 
         <button class="btn-success" name="update">
           Update
