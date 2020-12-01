@@ -17,23 +17,19 @@
       <div class="card card-body">
         <form action="save.php" method="POST">
           <div class="form-group">
-            <input type="text" name="Nombredeproducto" class="form-control" placeholder="Nombre de producto" autofocus required>
+            <input type="text" name="Nombredeproducto" class="form-control" placeholder="Nombre" autofocus required>
           </div>
           <div class="form-group">
-            <input type="text" name="Referencia" class="form-control" placeholder="Referencia" autofocus  required>
+            <input type="text" name="Referencia" class="form-control" placeholder="Sexo" autofocus  required>
           </div>
-          <div class="form-group">
-            <input type="text" name="Precio" class="form-control" placeholder="Precio" autofocus min="1" pattern="^[0-9]+" required>
+           <div class="form-group">
+            <input type="text" name="Precio" class="form-control" placeholder="Cédula" autofocus min="1" pattern="^[0-9]+" required>
           </div>
-          <div class="form-group">
-            <input type="text" name="Peso" class="form-control" placeholder="Peso" autofocus min="1" pattern="^[0-9]+" required>
+         
+          <div class="form-group"> 
+            <input type="text" name="Categoria" class="form-control" placeholder="Fecha nacimiento" autofocus required>
           </div>
-          <div class="form-group">
-            <input type="text" name="Categoria" class="form-control" placeholder="Categoria" autofocus required>
-          </div>
-          <div class="form-group">
-            <input type="text" name="Stock" class="form-control" placeholder="Stock" autofocus min="1" pattern="^[0-9]+" required>
-          </div>
+       
           <input type="submit" name="saveproduct" class="btn btn-success btn-block" value="Save Product" required>
         </form>
       </div>
@@ -42,14 +38,10 @@
       <table class="table table-bordered">
         <thead>
           <tr>
-            <th>Nombre de producto</th>
+            <th>Nombre </th>
             <th>Referencia</th>
-            <th>Precio</th>
-            <th>Peso</th>
-            <th>Categoria</th>
-            <th>Stock</th>
-            <th>Fecha ùltima venta</th>
-            <th>Acciones</th>
+            <th>Sexo </th>
+            <th>Fecha </th>
           </tr>
         </thead>
         <tbody>
@@ -61,9 +53,6 @@
           while($row = mysqli_fetch_assoc($result_tasks)) { ?>
           <tr>
             <td><?php echo $row['Nombredeproducto']; ?></td>
-            <td><?php echo $row['Referencia']; ?></td>
-            <td><?php echo $row['Precio']; ?></td>
-            <td><?php echo $row['Peso']; ?></td>
             <td><?php echo $row['Categoria']; ?></td>
             <td><?php echo $row['Stock']; ?></td>
             <td><?php echo $row['Fechadeultimaventa']; ?></td>

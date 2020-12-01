@@ -33,25 +33,26 @@ if (isset($_POST['update'])) {
   $Stock = $_POST['Stock'];
   //$Fechadecreacion = $_POST['Fechadecreacion'];//Se genera solo en BD
   //$Fechadeultimaventa = $_POST['Fechadeultimaventa'];
- echo $Precio;
+ echo $Referencia;
+ //echo "asdfsdfasdfasdfasdf";
  if($Precio == NULL){
    $Precio = 1000;
  }
   $query = "UPDATE producto 
   set Nombredeproducto = '$Nombredeproducto', 
-  Referencia = '$Referencia' ,
+  Referencia = '$Referencia',
   Precio = '$Precio',
   Peso = '$Peso',
   Categoria = '$Categoria',
   Stock = '$Stock',
   Fechadecreacion = DEFAULT,
-  Fechadeultimaventa = '$Fechadeultimaventa'
+  Fechadeultimaventa = null
   WHERE ID=$id";
   echo $query;
   mysqli_query($conn, $query);
   $_SESSION['message'] = 'Task Updated Successfully';
   $_SESSION['message_type'] = 'warning';
-  header('Location: index.php');
+  //header('Location: index.php');
 }
 
 ?>
@@ -70,8 +71,8 @@ if (isset($_POST['update'])) {
           echo $Referencia; ?>" placeholder="Actualizar Referencia" required>
         </div>
         <div class="form-group">
-          <input name="Precio	" type="text" class="form-control" value="<?php 
-          echo $Precio; ?>" placeholder="Actualizar Precio" required>
+            <input name="Precio" type="text" class="form-control" value="<?php 
+            echo $Precio; ?>" placeholder="Actualizar Precio" required>
         </div>
         <div class="form-group">
           <input name="Peso" type="text" class="form-control" value="<?php 
